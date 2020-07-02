@@ -1,0 +1,445 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 4.2.1">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="/lib/pace/pace-theme-big-counter.min.css">
+  <script src="/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Mist","version":"7.8.0","exturl":false,"sidebar":{"position":"left","display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":false,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}}};
+  </script>
+
+  <meta name="description" content="Set up environment Install git (really? https:&#x2F;&#x2F;git-scm.com&#x2F;) Install Node.js (From official website: https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;)  Installing HexoInstall Hexo command line1$ npm install -g hexo-c">
+<meta property="og:type" content="article">
+<meta property="og:title" content="How to Set Up Hexo and Deploy to Github Page (right after setting up and deploying)">
+<meta property="og:url" content="http://yoursite.com/2020/07/01/How-to-Set-Up-Hexo-and-Deploy-to-Github-Page-right-after-setting-up-and-deploying/index.html">
+<meta property="og:site_name" content="TheSteve Blog">
+<meta property="og:description" content="Set up environment Install git (really? https:&#x2F;&#x2F;git-scm.com&#x2F;) Install Node.js (From official website: https:&#x2F;&#x2F;nodejs.org&#x2F;en&#x2F;download&#x2F;)  Installing HexoInstall Hexo command line1$ npm install -g hexo-c">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-07-02T02:17:44.000Z">
+<meta property="article:modified_time" content="2020-07-02T02:17:44.286Z">
+<meta property="article:author" content="Steven Liao">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/07/01/How-to-Set-Up-Hexo-and-Deploy-to-Github-Page-right-after-setting-up-and-deploying/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>How to Set Up Hexo and Deploy to Github Page (right after setting up and deploying) | TheSteve Blog</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">TheSteve Blog</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+  </ul>
+</nav>
+
+
+
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/07/01/How-to-Set-Up-Hexo-and-Deploy-to-Github-Page-right-after-setting-up-and-deploying/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="Steven Liao">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="TheSteve Blog">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          How to Set Up Hexo and Deploy to Github Page (right after setting up and deploying)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-07-01 22:17:44" itemprop="dateCreated datePublished" datetime="2020-07-01T22:17:44-04:00">2020-07-01</time>
+            </span>
+
+          
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <h2 id="Set-up-environment"><a href="#Set-up-environment" class="headerlink" title="Set up environment"></a>Set up environment</h2><ul>
+<li>Install git (really? <a href="https://git-scm.com/" target="_blank" rel="noopener">https://git-scm.com/</a>)</li>
+<li>Install Node.js (From official website: <a href="https://nodejs.org/en/download/" target="_blank" rel="noopener">https://nodejs.org/en/download/</a>)</li>
+</ul>
+<h2 id="Installing-Hexo"><a href="#Installing-Hexo" class="headerlink" title="Installing Hexo"></a>Installing Hexo</h2><h3 id="Install-Hexo-command-line"><a href="#Install-Hexo-command-line" class="headerlink" title="Install Hexo command line"></a>Install Hexo command line</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install -g hexo-cli</span><br></pre></td></tr></table></figure>
+
+<a id="more"></a>
+
+<h3 id="Initialize-Hexo"><a href="#Initialize-Hexo" class="headerlink" title="Initialize Hexo"></a>Initialize Hexo</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ <span class="built_in">cd</span> &lt;path&gt;</span><br><span class="line">$ hexo init .</span><br><span class="line">$ npm install</span><br></pre></td></tr></table></figure>
+
+<p>Notes:</p>
+<ul>
+<li>Configuration file for<ul>
+<li>Hexo project: <code>&lt;hexo_root_path&gt;/_config.yml</code></li>
+<li>Hexo theme: <code>&lt;hexo_root_path&gt;/themes/&lt;theme_name&gt;/_config.yml</code></li>
+</ul>
+</li>
+<li>Create draft folder is not exist:  <ul>
+<li><code>$ mkdir ./source_drafts</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="Start-local-server"><a href="#Start-local-server" class="headerlink" title="Start local server"></a>Start local server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br><span class="line">INFO  Start processing</span><br><span class="line">INFO  Hexo is running at http://localhost:4000 . Press Ctrl+C to stop.</span><br></pre></td></tr></table></figure>
+
+<p>Go to <a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> and here is the hello world.</p>
+<h2 id="Deploy-to-Github-Page"><a href="#Deploy-to-Github-Page" class="headerlink" title="Deploy to Github Page"></a>Deploy to Github Page</h2><h3 id="Set-up-Github-Page"><a href="#Set-up-Github-Page" class="headerlink" title="Set up Github Page"></a>Set up Github Page</h3><ul>
+<li>Register Github account</li>
+<li>Follow instructions on <a href="https://pages.github.com/" target="_blank" rel="noopener">https://pages.github.com/</a> and create site <code>username.github.io</code></li>
+</ul>
+<h3 id="Set-up-deloyment-tool"><a href="#Set-up-deloyment-tool" class="headerlink" title="Set up deloyment tool"></a>Set up deloyment tool</h3><p>Install deployment plugin</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ npm install hexo-deployer-git --save</span><br></pre></td></tr></table></figure>
+
+<p>Set up SSH key</p>
+<ul>
+<li>Generate SSH key. Follow <a href="https://docs.github.com/en/github/authenticating-to-github/connecting-to-github-with-ssh" target="_blank" rel="noopener">Github’s detailed guid</a> or</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ ssh-keygen -t rsa -C <span class="string">"email_address"</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Add public key (example file: <code>C:\Users\Administrator\.ssh\id_rsa.pub</code>) to Github on <a href="https://github.com/settings/keys" target="_blank" rel="noopener">New SSH Keys</a></li>
+<li>Verify</li>
+</ul>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ ssh -T git@github.com</span><br><span class="line">Hi  ! You<span class="string">'ve successfully authenticated, but GitHub does not provide shell access.</span></span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>Update the deployment section Hexo config file</li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Deployment</span></span><br><span class="line"><span class="comment">## Docs: https://hexo.io/docs/deployment.html</span></span><br><span class="line"><span class="attr">deploy:</span></span><br><span class="line">  <span class="attr">type:</span> <span class="string">git</span></span><br><span class="line">  <span class="attr">repo:</span> <span class="string">git@github.com:&lt;username&gt;/&lt;username&gt;.github.io.git</span></span><br><span class="line">  <span class="attr">branch:</span> <span class="string">master</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="Build-and-deploy"><a href="#Build-and-deploy" class="headerlink" title="Build and deploy"></a>Build and deploy</h3><p>Run the following command</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">hexo g &amp;&amp; hexo d</span><br></pre></td></tr></table></figure>
+
+<h2 id="Configure-Theme"><a href="#Configure-Theme" class="headerlink" title="Configure Theme"></a>Configure Theme</h2><h3 id="Recomended-Themes"><a href="#Recomended-Themes" class="headerlink" title="Recomended Themes"></a>Recomended Themes</h3><ul>
+<li><a href="https://github.com/theme-next/hexo-theme-next" target="_blank" rel="noopener">Next</a></li>
+<li><a href="https://github.com/iTimeTraveler/hexo-theme-hiero" target="_blank" rel="noopener">Hiero</a></li>
+<li>More from Hexo official site: <a href="https://hexo.io/themes/" target="_blank" rel="noopener">https://hexo.io/themes/</a></li>
+</ul>
+<h3 id="Install-and-use-theme"><a href="#Install-and-use-theme" class="headerlink" title="Install and use theme"></a>Install and use theme</h3><ul>
+<li>Download / clone the theme</li>
+<li>Copy and paste the theme folder to <code>&lt;hexo_root_path&gt;/themes/&lt;theme_name&gt;</code></li>
+<li>Update <code>&lt;hexo_root_path&gt;/_config.yml</code></li>
+</ul>
+<figure class="highlight yml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Extensions</span></span><br><span class="line"><span class="comment">## Plugins: https://hexo.io/plugins/</span></span><br><span class="line"><span class="comment">## Themes: https://hexo.io/themes/</span></span><br><span class="line"><span class="attr">theme:</span> <span class="string">&lt;theme_folder_name&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="Random-Notes"><a href="#Random-Notes" class="headerlink" title="Random Notes"></a>Random Notes</h2><ul>
+<li><p>Generate “Read More” for posts (for Next theme, <a href="https://github.com/iissnan/hexo-theme-next/issues/62" target="_blank" rel="noopener">original discussion</a>)</p>
+<ul>
+<li>Add <code>&lt;!--more--&gt;</code> in post markdown file. Only contents before the tag would appear on home page.</li>
+<li>Add <code>scroll_to_more:false</code> to theme config file, to allow “Read More” redirect to start from the top of the post</li>
+</ul>
+</li>
+<li><p>Preview post</p>
+<ul>
+<li><a href="https://github.com/zhuzhuyule/HexoEditor" target="_blank" rel="noopener">HexoEditor</a></li>
+<li>VS Code Extension: <a href="https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced" target="_blank" rel="noopener">Markdown Preview Enhanced</a></li>
+</ul>
+</li>
+<li><p>Hexo Docs: <a href="https://hexo.io/zh-cn/docs/index.html" target="_blank" rel="noopener">https://hexo.io/zh-cn/docs/index.html</a></p>
+</li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-up-environment"><span class="nav-number">1.</span> <span class="nav-text">Set up environment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Installing-Hexo"><span class="nav-number">2.</span> <span class="nav-text">Installing Hexo</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-Hexo-command-line"><span class="nav-number">2.1.</span> <span class="nav-text">Install Hexo command line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Initialize-Hexo"><span class="nav-number">2.2.</span> <span class="nav-text">Initialize Hexo</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Start-local-server"><span class="nav-number">2.3.</span> <span class="nav-text">Start local server</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Deploy-to-Github-Page"><span class="nav-number">3.</span> <span class="nav-text">Deploy to Github Page</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-up-Github-Page"><span class="nav-number">3.1.</span> <span class="nav-text">Set up Github Page</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Set-up-deloyment-tool"><span class="nav-number">3.2.</span> <span class="nav-text">Set up deloyment tool</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Build-and-deploy"><span class="nav-number">3.3.</span> <span class="nav-text">Build and deploy</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Configure-Theme"><span class="nav-number">4.</span> <span class="nav-text">Configure Theme</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Recomended-Themes"><span class="nav-number">4.1.</span> <span class="nav-text">Recomended Themes</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Install-and-use-theme"><span class="nav-number">4.2.</span> <span class="nav-text">Install and use theme</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Random-Notes"><span class="nav-number">5.</span> <span class="nav-text">Random Notes</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">Steven Liao</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">1</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+  </nav>
+</div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Steven Liao</span>
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://mist.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Mist</a>
+  </div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/muse.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
